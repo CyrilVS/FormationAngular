@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Demandes de crédit</div>
+    <table class="table">
+        <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Mail</th>
+        <th>Telephone</th>
+        <th>Montant</th>
+        </tr>
+        <tr ng-repeat="personne in personnes | orderBy:'nom'">
+        <td>{{personne.nom | makeUpperCase}}</td>
+        <td>{{personne.prenom}}</td>
+        <td>{{personne.email}}</td>
+        <td>{{personne.telephone}}</td>
+        <td>{{personne.montant | currency:"EUR"}}</td>
+        </tr>        
+    </table>
+</div>
