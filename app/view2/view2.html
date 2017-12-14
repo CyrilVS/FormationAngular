@@ -1,3 +1,30 @@
-<div ng-controller="CtrlCredit">
-  <menu-credit></menu-credit>
+<div ng-controller="View2Ctrl">
+  <menu-list></menu-list>
+</div>
+
+<form class="myForm">
+  <div><br/><input class="btn" type="submit" ng-click="recupInfo();" value="Valider"/></div>
+</form>
+
+<formu></formu>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Demandes de crédit</div>
+    <table class="table">
+        <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Mail</th>
+        <th>Telephone</th>
+        <th>Montant</th>
+        </tr>
+        <tr ng-repeat="personne in DocRecup | orderBy:'nom'">
+        <td>{{personne.nom}}</td>
+        <td>{{personne.prenom}}</td>
+        <td>{{personne.email}}</td>
+        <td>{{personne.telephone}}</td>
+        <td>{{personne.montant | currency:"EUR"}}</td>
+        </tr>        
+    </table>
 </div>
