@@ -25,14 +25,17 @@ angular.module('myApp.view1', ['ngRoute'])
   };  
   $scope.addCredit = function(personne){
     $scope.submitDone = true;
-    $scope.personne = {
-      nom: personne.nom,
-      prenom: personne.prenom,
-      telephone: personne.telephone,
-      email: personne.email,
-      montant: personne.montant
-    };
-    $scope.personnes.push(personne);
+    if(ajoutPersonne.nom.value != "" && ajoutPersonne.prenom.value != "" && ajoutPersonne.telephone.value != "" && ajoutPersonne.email.value != "" && ajoutPersonne.montant.value != "")
+    {
+      $scope.personne = {
+        nom: personne.nom,
+        prenom: personne.prenom,
+        telephone: personne.telephone,
+        email: personne.email,
+        montant: personne.montant
+      };
+      $scope.personnes.push(personne);
+    }
   };
 }])
 .directive('menuCredit', function() {
