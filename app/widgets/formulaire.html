@@ -11,7 +11,7 @@
 </div>
 <div>
     <label>Téléphone</label>
-    <input name="telephone" type="text" ng-model="personne.telephone" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" class="form-control" required/>
+    <input name="telephone" type="number" ng-model="personne.telephone" pattern="^.*$" class="form-control" required/>
     <span ng-show="ajoutPersonne.telephone.$invalid && submitDone" style="color: red">A remplir</span>
     <span ng-show="ajoutPersonne.telephone.$error.pattern && submitDone" style="color: red">Format incorrect</span>
 </div>

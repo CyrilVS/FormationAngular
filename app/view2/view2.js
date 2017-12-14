@@ -24,6 +24,17 @@ angular.module('myApp.view2', ['ngRoute'])
     });
   };
 
+  $scope.mongoLab = function () {
+    $http({
+      url: 'https://api.mongolab.com/api/1/databases/sfbooks/collections/sfbooks/?apiKey=d3qvB8ldYFW2KSynHRediqLuBLP8JA8i',
+      method: 'GET'
+    }).then(function successCallback(response) {
+      console.log(response);
+    }, function errorCallback(response) {
+      console.log(response);
+    });
+  };  
+
   $scope.addCredit = function(personne){
     $scope.submitDone = true;   
     $scope.personne = {
