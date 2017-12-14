@@ -56,6 +56,13 @@ angular.module('myApp.view1', ['ngRoute'])
     templateUrl: 'widgets/crediteur.html'
   };
 })
+.directive('myCustomer', function() {
+  return {
+    templateUrl: function(elem, attr){
+      return 'widgets/customer-' + attr.type +'.html'
+    }
+  };
+})
 .filter('makeUpperCase', function() {
   return function(item){
     return item.toUpperCase();
